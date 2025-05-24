@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شموع مغربية | بوجي ارتيزانال</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #FEFEFE;
+            color: #2C2C2C;
+            line-height: 1.6;
+        }
+        .gold-text {
+            color: #B8860B;
+        }
+        .gold-bg {
+            background-color: #B8860B;
+        }
+        .beige-bg {
+            background-color: #F8F6F0;
+        }
+        .soft-pink-bg {
+            background-color: #F9F7F4;
+        }
+        .professional-shadow {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+        .hero-gradient {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('https://www.cotebougie.com/blog/wp-content/uploads/2021/12/tamegroute.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .product-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #E5E5E5;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+        .cta-button {
+            background: linear-gradient(135deg, #B8860B, #DAA520);
+            transition: all 0.3s ease;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(184, 134, 11, 0.3);
+        }
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        .testimonial-card {
+            border-radius: 20px;
+            border: 1px solid #E8E8E8;
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        .section-padding {
+            padding: 80px 0;
+        }
+        .trust-badge {
+            background: linear-gradient(135deg, #F8F9FA, #E9ECEF);
+            border: 2px solid #DEE2E6;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .trust-badge:hover {
+            border-color: #B8860B;
+            transform: translateY(-2px);
+        }
+        .professional-header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(184, 134, 11, 0.1);
+        }
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #B8860B, #DAA520);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 2rem;
+        }
+        .stats-counter {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #B8860B;
+            display: block;
+        }
+        .price-tag {
+            background: linear-gradient(135deg, #B8860B, #DAA520);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        @keyframes gradientShift {
+            0%, 100% {
+                background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 25%, #45B7D1 50%, #96CEB4 75%, #FFEAA7 100%);
+            }
+            25% {
+                background: linear-gradient(135deg, #4ECDC4 0%, #45B7D1 25%, #96CEB4 50%, #FFEAA7 75%, #FF6B6B 100%);
+            }
+            50% {
+                background: linear-gradient(135deg, #45B7D1 0%, #96CEB4 25%, #FFEAA7 50%, #FF6B6B 75%, #4ECDC4 100%);
+            }
+            75% {
+                background: linear-gradient(135deg, #96CEB4 0%, #FFEAA7 25%, #FF6B6B 50%, #4ECDC4 75%, #45B7D1 100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-50 professional-header professional-shadow">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="text-4xl font-bold gold-text">🕯️ شموع مغربية</div>
+                <div class="mr-4 text-sm text-gray-600">
+                    <div class="font-semibold">صناعة مغربية أصيلة</div>
+                    <div class="text-xs">منذ 2020</div>
+                </div>
+            </div>
+            <nav>
+                <ul class="flex space-x-8 items-center">
+                    <li><a href="#products" class="px-4 py-2 hover:text-yellow-600 transition-colors font-medium">المنتجات</a></li>
+                    <li><a href="#testimonials" class="px-4 py-2 hover:text-yellow-600 transition-colors font-medium">أراء الزبناء</a></li>
+                    <li><a href="#contact" class="px-4 py-2 hover:text-yellow-600 transition-colors font-medium">تواصل معنا</a></li>
+                    <li><a href="#order" class="cta-button px-6 py-3 text-white rounded-full font-bold text-sm">طلب الآن</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-32 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-20"></div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-6xl md:text-7xl font-bold mb-8 leading-tight">شموع مغربية<br><span class="text-yellow-300">كتدفي القلب و تعطر الدار</span></h1>
+                <p class="text-2xl md:text-3xl mb-6 font-light opacity-90">صناعة يدوية مغربية أصيلة</p>
+                <p class="text-xl mb-12 opacity-80 max-w-2xl mx-auto">من مواد طبيعية 100% موجودة في المغرب، كل شمعة مصنوعة بالحب والإتقان</p>
+                
+                <!-- Trust Indicators -->
+                <div class="flex justify-center items-center space-x-8 mb-12 text-lg">
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-green-400 ml-2"></i>
+                        <span>مواد طبيعية 100%</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-shipping-fast text-blue-400 ml-2"></i>
+                        <span>توصيل مجاني</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-star text-yellow-400 ml-2"></i>
+                        <span>+1000 زبون سعيد</span>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
+                    <a href="#order" class="cta-button px-10 py-5 text-white text-xl rounded-full inline-block font-bold">شوف المنتجات ديالنا <i class="fas fa-arrow-left mr-2"></i></a>
+                    <a href="#testimonials" class="border-2 border-white px-10 py-5 text-white text-xl rounded-full inline-block font-bold hover:bg-white hover:text-gray-800 transition-all">شوف آراء الزبناء</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section-padding beige-bg">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl font-bold mb-6 gold-text">علاش تختار الشموع ديالنا؟</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">نحن نقدم لك أفضل الشموع المغربية الطبيعية بجودة عالمية وأسعار منافسة</p>
+            </div>
+            
+            <!-- Stats Section -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+                <div class="text-center">
+                    <span class="stats-counter">1000+</span>
+                    <p class="text-gray-600 font-medium">زبون سعيد</p>
+                </div>
+                <div class="text-center">
+                    <span class="stats-counter">50+</span>
+                    <p class="text-gray-600 font-medium">ساعة احتراق</p>
+                </div>
+                <div class="text-center">
+                    <span class="stats-counter">100%</span>
+                    <p class="text-gray-600 font-medium">مواد طبيعية</p>
+                </div>
+                <div class="text-center">
+                    <span class="stats-counter">24h</span>
+                    <p class="text-gray-600 font-medium">توصيل سريع</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-white p-8 rounded-2xl professional-shadow text-center hover:shadow-2xl transition-all">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">مواد طبيعية 100%</h3>
+                    <p class="text-gray-600 leading-relaxed">الشمع ديالنا طبيعي و ماكيضرش الصحة ديالك. كنختارو غير مكونات عالية الجودة باش نقدمو ليك منتوج صحي و آمن.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl professional-shadow text-center hover:shadow-2xl transition-all">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">كتدوم أكثر من الشموع العادية</h3>
+                    <p class="text-gray-600 leading-relaxed">الشموع ديالنا كتبقى مشعلة لمدة طويلة، كتوصل حتى ل50 ساعة، وهادشي كيخليك تستمتع بالعطر ديالها لوقت أطول.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl professional-shadow text-center hover:shadow-2xl transition-all">
+                    <div class="feature-icon">
+                        <i class="fas fa-hands"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">صناعة يدوية مغربية أصيلة</h3>
+                    <p class="text-gray-600 leading-relaxed">كل شمعة مصنوعة باليد من طرف حرفيين مغاربة، كنحافظو على التقاليد ديالنا و كنزيدو عليها لمسة عصرية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="section-padding">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold mb-6 gold-text">مجموعة الشموع ديالنا</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">اختار الشمعة اللي كتناسبك من بين المجموعة ديالنا المتنوعة والمصنوعة بعناية فائقة</p>
+            </div>
+            
+            <!-- Trust Badges -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+                <div class="trust-badge">
+                    <i class="fas fa-shield-alt text-2xl gold-text mb-2"></i>
+                    <p class="font-semibold text-sm">ضمان الجودة</p>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-truck text-2xl gold-text mb-2"></i>
+                    <p class="font-semibold text-sm">توصيل مجاني</p>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-undo text-2xl gold-text mb-2"></i>
+                    <p class="font-semibold text-sm">إرجاع مجاني</p>
+                </div>
+                <div class="trust-badge">
+                    <i class="fas fa-headset text-2xl gold-text mb-2"></i>
+                    <p class="font-semibold text-sm">دعم 24/7</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-2xl overflow-hidden professional-shadow">
+                    <img src="https://m.media-amazon.com/images/I/81gYelbrRcL.jpg" alt="شمعة صغيرة" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">شمعة صغيرة بالياسمين</h3>
+                        <p class="mb-3">شمعة طبيعية 100% بريحة الياسمين المنعشة، مناسبة للمساحات الصغيرة و كتدوم حتى ل20 ساعة.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="price-tag">35 درهم</span>
+                            <button class="cta-button text-white px-6 py-3 rounded-lg font-bold">أضف للسلة</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-2xl overflow-hidden professional-shadow">
+                    <img src="https://i.pinimg.com/736x/f4/11/4b/f4114be5d4d0874c7a31de3fe2f5b6f9.jpg" alt="شمعة متوسطة" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">شمعة متوسطة بالورد</h3>
+                        <p class="mb-3">شمعة كتعطر المكان بريحة الورد المغربي الأصيل، مصنوعة من الشمع الطبيعي و كتدوم حتى ل35 ساعة.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="price-tag">75 درهم</span>
+                            <button class="cta-button text-white px-6 py-3 rounded-lg font-bold">أضف للسلة</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-2xl overflow-hidden professional-shadow">
+                    <img src="https://www.thenavagepatch.com/wp-content/uploads/2019/05/DIY-Moroccan-Candles-Holders-F018.jpg" alt="شمعة كبيرة" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">شمعة كبيرة بالعود</h3>
+                        <p class="mb-3">شمعة فاخرة بريحة العود الفخمة، مناسبة للمناسبات الخاصة و الهدايا الراقية، كتدوم حتى ل50 ساعة.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="price-tag">120 درهم</span>
+                            <button class="cta-button text-white px-6 py-3 rounded-lg font-bold">أضف للسلة</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-2xl overflow-hidden professional-shadow">
+                    <img src="https://www.thenavagepatch.com/wp-content/uploads/2019/05/DIY-Moroccan-Candles-Holders-Featured-TNP-2.jpg" alt="مجموعة شموع" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold mb-2">مجموعة شموع متنوعة</h3>
+                        <p class="mb-3">مجموعة من 3 شموع بروائح مختلفة: الياسمين، الورد، و المسك. هدية مثالية لأي مناسبة.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="price-tag">200 درهم</span>
+                            <button class="cta-button text-white px-6 py-3 rounded-lg font-bold">أضف للسلة</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#all-products" class="cta-button px-6 py-3 text-white rounded-full inline-block font-bold">شوف كاع المنتجات ديالنا <i class="fas fa-arrow-left mr-2"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 soft-pink-bg">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <img src="https://www.cotebougie.com/blog/wp-content/uploads/2021/12/tamegroute.jpg" alt="صناعة الشموع" class="rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h2 class="text-4xl font-bold mb-6 gold-text">شموع مصنوعة بمحبة وإتقان</h2>
+                    <p class="text-lg mb-6">كنصنعو الشموع ديالنا فورشات صغيرة بيد عاملة مغربية. كل شمعة عندها قصة وكتعكس الصنعة التقليدية المغربية.</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center">
+                            <span class="text-yellow-500 mr-3"><i class="fas fa-check-circle text-xl"></i></span>
+                            <span>مواد طبيعية 100% ماكتضرش البيئة</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-yellow-500 mr-3"><i class="fas fa-check-circle text-xl"></i></span>
+                            <span>عطور مستخرجة من نباتات و أزهار مغربية</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-yellow-500 mr-3"><i class="fas fa-check-circle text-xl"></i></span>
+                            <span>كتدوم لوقت طويل وماكتطلق دخان ضار</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-yellow-500 mr-3"><i class="fas fa-check-circle text-xl"></i></span>
+                            <span>تصاميم متنوعة تناسب كل الأذواق والديكورات</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-yellow-500 mr-3"><i class="fas fa-check-circle text-xl"></i></span>
+                            <span>توصيل لجميع مدن المغرب في 24 ساعة</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-4 gold-text">شوف شنو قالو علينا الزبناء ديالنا</h2>
+            <p class="text-center text-xl mb-12">أكثر من 1000 زبون سعيد بالشموع ديالنا</p>
+            
+            <!-- Video Testimonial -->
+            <div class="flex justify-center mb-12">
+                <div class="w-full max-w-2xl">
+                    <h3 class="text-3xl font-bold text-center mb-6 gold-text">فيديو أراء زبنائنا</h3>
+                    <div class="relative w-full" style="padding-top: 133.33%;">
+                        <iframe src="https://player.vimeo.com/video/1087424839" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen class="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white p-6 soft-shadow">
+                    <div class="flex items-center mb-4">
+                        <img src="https://t3.ftcdn.net/jpg/04/33/45/16/360_F_433451667_X7n9fP52kKHh9inAAXTtwmnUHLFZkzb8.jpg" alt="صورة فاطمة" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h3 class="font-bold text-lg">فاطمة</h3>
+                            <p class="text-gray-600">الرباط</p>
+                        </div>
+                    </div>
+                    <p class="text-lg mb-3">"الريحة زوينة بزاف والخدمة نقية ❤️ شريت منهم الشمعة ديال الياسمين وولات كتعطر الصالون كامل. غادي نعاود نشري منهم بلا شك."</p>
+                    <div class="text-yellow-500">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white p-6 soft-shadow">
+                    <div class="flex items-center mb-4">
+                        <img src="https://img.freepik.com/premium-photo/woman-smiling-holding-candle-dimly-lit-setting_161362-88137.jpg" alt="صورة سلمى" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h3 class="font-bold text-lg">سلمى</h3>
+                            <p class="text-gray-600">الدار البيضاء</p>
+                        </div>
+                    </div>
+                    <p class="text-lg mb-3">"أحسن شموع جربت فحياتي، الريحة كتبقى مدة طويلة و التغليف راقي بزاف. هادو ماشي شموع عاديين، هادي تجربة كاملة للراحة و الاسترخاء."</p>
+                    <div class="text-yellow-500">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white p-6 soft-shadow">
+                    <div class="flex items-center mb-4">
+                        <img src="https://t4.ftcdn.net/jpg/07/14/76/05/360_F_714760508_ELQklcI92DPU5B42MXO5s7oQLAaPqN5c.jpg" alt="صورة سعيد" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h3 class="font-bold text-lg">سعيد</h3>
+                            <p class="text-gray-600">طنجة</p>
+                        </div>
+                    </div>
+                    <p class="text-lg mb-3">"شريت منهم هدية لماما و عجباتها بزاف. التوصيل كان سريع والتغليف أنيق كيليق بهدية. الثمن مناسب مقارنة مع الجودة العالية. شكرا بزاف!"</p>
+                    <div class="text-yellow-500">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section id="order" class="py-16 bg-yellow-50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6 gold-text">واش باغي تجرب الشموع ديالنا؟</h2>
+            <p class="text-xl mb-8">متضيعش الوقت، شري الشمعة و عطر دارك. توصيل مجاني لطلبات أكثر من 300 درهم!</p>
+            
+            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
+                <a href="#shop" class="cta-button px-8 py-4 text-white rounded-full font-bold text-xl order-2 md:order-1">
+                    <i class="fas fa-shopping-cart ml-2"></i>
+                    كليك هنا باش تطلب دابا
+                </a>
+                <a href="https://wa.me/212600000000" class="bg-green-500 hover:bg-green-600 px-8 py-4 text-white rounded-full font-bold text-xl transition duration-300 order-1 md:order-2">
+                    <i class="fab fa-whatsapp ml-2"></i>
+                    تواصل معانا فالواتساب
+                </a>
+            </div>
+            
+            <p class="mt-8 text-lg">أو اتصل بنا مباشرة: <span class="font-bold">+212 600-000000</span></p>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact-form" class="py-16 beige-bg">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 gold-text">تواصل معنا</h2>
+            <div class="max-w-lg mx-auto bg-white p-8 rounded-lg soft-shadow">
+                <form action="#" method="POST">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 text-lg font-bold mb-3">اسمك الكامل:</label>
+                            <input type="text" id="name" name="name" class="w-full py-4 px-4 border-2 border-gray-200 rounded-xl focus:border-yellow-500 focus:outline-none transition-colors" required>
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-gray-700 text-lg font-bold mb-3">رقم الهاتف:</label>
+                            <input type="tel" id="phone" name="phone" class="w-full py-4 px-4 border-2 border-gray-200 rounded-xl focus:border-yellow-500 focus:outline-none transition-colors" required>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-gray-700 text-lg font-bold mb-3">بريدك الإلكتروني:</label>
+                        <input type="email" id="email" name="email" class="w-full py-4 px-4 border-2 border-gray-200 rounded-xl focus:border-yellow-500 focus:outline-none transition-colors" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="subject" class="block text-gray-700 text-lg font-bold mb-3">الموضوع:</label>
+                        <select id="subject" name="subject" class="w-full py-4 px-4 border-2 border-gray-200 rounded-xl focus:border-yellow-500 focus:outline-none transition-colors">
+                            <option value="">اختر الموضوع</option>
+                            <option value="order">طلب شراء</option>
+                            <option value="inquiry">استفسار عن المنتجات</option>
+                            <option value="complaint">شكوى أو اقتراح</option>
+                            <option value="wholesale">طلب جملة</option>
+                        </select>
+                    </div>
+                    <div class="mb-8">
+                        <label for="message" class="block text-gray-700 text-lg font-bold mb-3">رسالتك:</label>
+                        <textarea id="message" name="message" rows="5" class="w-full py-4 px-4 border-2 border-gray-200 rounded-xl focus:border-yellow-500 focus:outline-none transition-colors" placeholder="اكتب رسالتك هنا..." required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button class="cta-button px-12 py-4 text-white rounded-full font-bold text-lg" type="submit">
+                            <i class="fas fa-paper-plane ml-2"></i>
+                            أرسل الرسالة
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="section-padding relative overflow-hidden" style="background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 25%, #45B7D1 50%, #96CEB4 75%, #FFEAA7 100%); animation: gradientShift 8s ease-in-out infinite;">
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-600/20 via-pink-500/20 to-orange-400/20"></div>
+        <div class="absolute inset-0" style="background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%), radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="flex justify-center mb-8">
+                    <div class="relative group">
+                        <!-- Animated glow effect -->
+                        <div class="absolute -inset-4 bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 rounded-full blur-lg opacity-75 group-hover:opacity-100 animate-pulse"></div>
+                        <!-- Logo container with enhanced styling -->
+                        <div class="relative bg-white/30 backdrop-blur-md rounded-full p-6 shadow-2xl border-4 border-white/40 transform group-hover:scale-110 transition-all duration-500 hover:rotate-3">
+                            <div class="absolute inset-0 bg-gradient-to-br from-yellow-200/30 to-orange-300/30 rounded-full animate-pulse"></div>
+                            <img src="C:\Users\Lenovo\Downloads\20250523_2204_Logo Lumière Naturelle_simple_compose_01jvzfbbghfcbs24fntj5qb8rx.png" alt="Lumière Naturelle Logo" class="h-24 w-auto relative z-10 filter drop-shadow-lg">
+                            <!-- Sparkle effects -->
+                            <div class="absolute top-2 right-2 w-3 h-3 bg-yellow-300 rounded-full animate-ping"></div>
+                            <div class="absolute bottom-3 left-3 w-2 h-2 bg-pink-300 rounded-full animate-ping" style="animation-delay: 0.5s;"></div>
+                            <div class="absolute top-1/2 left-1 w-1.5 h-1.5 bg-blue-300 rounded-full animate-ping" style="animation-delay: 1s;"></div>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="text-5xl font-bold mb-6 text-white drop-shadow-lg" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">اشترك في النشرة الإخبارية</h2>
+                <p class="text-xl mb-8 text-white/95 drop-shadow-md">احصل على آخر العروض والمنتجات الجديدة مباشرة في بريدك الإلكتروني</p>
+                
+                <div class="max-w-2xl mx-auto">
+                    <form id="newsletterForm" class="flex flex-col md:flex-row gap-4 mb-8" onsubmit="handleNewsletterSubscription(event)">
+                        <div class="flex-1">
+                            <input type="email" id="newsletterEmail" placeholder="أدخل بريدك الإلكتروني" class="w-full px-6 py-4 rounded-full text-gray-800 text-lg focus:outline-none focus:ring-4 focus:ring-yellow-300/50 shadow-xl border-2 border-white/30 backdrop-blur-sm bg-white/90" required>
+                        </div>
+                        <button type="submit" id="subscribeBtn" class="px-8 py-4 rounded-full font-bold text-lg transition-all hover:transform hover:scale-105 shadow-xl text-white" style="background: linear-gradient(135deg, #FF6B6B, #FF8E53); box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);" onmouseover="this.style.boxShadow='0 15px 40px rgba(255, 107, 107, 0.6)'" onmouseout="this.style.boxShadow='0 10px 30px rgba(255, 107, 107, 0.4)'">
+                            <i class="fas fa-paper-plane ml-2"></i>
+                            <span id="btnText">اشترك الآن</span>
+                        </button>
+                    </form>
+                    
+                    <!-- Success Message -->
+                    <div id="successMessage" class="hidden bg-green-500/20 backdrop-blur-sm border-2 border-green-400 rounded-2xl p-6 mb-6 text-center">
+                        <i class="fas fa-check-circle text-3xl text-green-400 mb-3"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">مرحبا بيك في العائلة ديالنا! 🎉</h3>
+                        <p class="text-white/90">تم إرسال رسالة ترحيب زوينة لبريدك الإلكتروني. شوف صندوق الوارد ديالك!</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                        <div class="flex items-center justify-center bg-white/20 backdrop-blur-sm rounded-2xl p-4 shadow-lg hover:bg-white/30 transition-all">
+                            <i class="fas fa-gift text-2xl ml-3 text-yellow-300 drop-shadow-md"></i>
+                            <span class="text-lg text-white font-semibold">عروض حصرية</span>
+                        </div>
+                        <div class="flex items-center justify-center bg-white/20 backdrop-blur-sm rounded-2xl p-4 shadow-lg hover:bg-white/30 transition-all">
+                            <i class="fas fa-bell text-2xl ml-3 text-green-300 drop-shadow-md"></i>
+                            <span class="text-lg text-white font-semibold">منتجات جديدة</span>
+                        </div>
+                        <div class="flex items-center justify-center bg-white/20 backdrop-blur-sm rounded-2xl p-4 shadow-lg hover:bg-white/30 transition-all">
+                            <i class="fas fa-star text-2xl ml-3 text-pink-300 drop-shadow-md"></i>
+                            <span class="text-lg text-white font-semibold">نصائح وأفكار</span>
+                        </div>
+                    </div>
+                    
+                    <p class="text-sm text-white/80 mt-6 bg-black/20 backdrop-blur-sm rounded-full px-6 py-3 inline-block">نحترم خصوصيتك ولن نشارك بياناتك مع أطراف ثالثة. يمكنك إلغاء الاشتراك في أي وقت.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-800 text-white py-10">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">شموع مغربية</h3>
+                    <p class="mb-4">شموع مغربية فاخرة مصنوعة يدويا بمواد طبيعية 100%. نوصل لجميع مدن المغرب.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-yellow-500 text-xl"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white hover:text-yellow-500 text-xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white hover:text-yellow-500 text-xl"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="text-white hover:text-yellow-500 text-xl"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">روابط سريعة</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-yellow-500">الرئيسية</a></li>
+                        <li><a href="#products" class="hover:text-yellow-500">المنتجات</a></li>
+                        <li><a href="#testimonials" class="hover:text-yellow-500">آراء الزبناء</a></li>
+                        <li><a href="#" class="hover:text-yellow-500">من نحن</a></li>
+                        <li><a href="#contact" class="hover:text-yellow-500">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">تواصل معنا</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt ml-2"></i>
+                            <span>شارع محمد الخامس، Oujda، المغرب</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone ml-2"></i>
+                            <span>+212 600-000000</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope ml-2"></i>
+                            <span>info@moroccancandles.com</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Persons -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">فريق العمل</h3>
+                    <ul class="space-y-2">
+                        <li>إلياس عراض - مدير المبيعات</li>
+                        <li>إلياس سعداوي - مدير الإنتاج</li>
+                        <li>أنس مباركي - مسؤول التسويق</li>
+                        <li>توفيق خير - خدمة الزبناء</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p>&copy; 2023 شموع مغربية. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Newsletter JavaScript Functionality -->
+    <script>
+        // Newsletter subscription handler
+        function handleNewsletterSubscription(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('newsletterEmail').value;
+            const btn = document.getElementById('subscribeBtn');
+            const btnText = document.getElementById('btnText');
+            const successMessage = document.getElementById('successMessage');
+            
+            // Show loading state
+            btn.disabled = true;
+            btnText.innerHTML = '<i class="fas fa-spinner fa-spin ml-2"></i>كيتم التسجيل...';
+            
+            // Simulate email sending (replace with actual email service)
+            setTimeout(() => {
+                // Send beautiful newsletter email
+                sendWelcomeEmail(email);
+                
+                // Show success message
+                successMessage.classList.remove('hidden');
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Reset form
+                document.getElementById('newsletterForm').reset();
+                
+                // Reset button
+                btn.disabled = false;
+                btnText.innerHTML = 'اشترك الآن';
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.classList.add('hidden');
+                }, 5000);
+                
+            }, 2000);
+        }
+        
+        // Function to send welcome email (simulated)
+        function sendWelcomeEmail(email) {
+            // In a real application, this would send an actual email
+            // For demonstration, we'll show the email template in console
+            const emailTemplate = createNewsletterTemplate(email);
+            
+            console.log('📧 Email sent to:', email);
+            console.log('📄 Email content:', emailTemplate);
+            
+            // Here you would integrate with an email service like:
+            // - EmailJS
+            // - SendGrid
+            // - Mailchimp
+            // - Your backend API
+            
+            // Example with EmailJS (uncomment and configure):
+            /*
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+                to_email: email,
+                message_html: emailTemplate,
+                from_name: 'شموع مغربية'
+            });
+            */
+        }
+        
+        // Create beautiful newsletter email template in Moroccan Darija
+        function createNewsletterTemplate(email) {
+            return `
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مرحبا بيك في عائلة الشموع المغربية! 🕯️</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 25%, #45B7D1 50%, #96CEB4 75%, #FFEAA7 100%);
+            margin: 0;
+            padding: 20px;
+            direction: rtl;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #B8860B, #DAA520);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        .logo {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .content {
+            padding: 40px 30px;
+        }
+        .welcome-text {
+            font-size: 1.5rem;
+            color: #2C2C2C;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .benefits {
+            background: #F8F6F0;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        .benefit-icon {
+            background: linear-gradient(135deg, #B8860B, #DAA520);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 15px;
+        }
+        .cta-button {
+            background: linear-gradient(135deg, #B8860B, #DAA520);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .footer {
+            background: #2C2C2C;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .social-links {
+            margin: 20px 0;
+        }
+        .social-links a {
+            color: #B8860B;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">🕯️</div>
+            <h1>شموع مغربية</h1>
+            <p>صناعة مغربية أصيلة</p>
+        </div>
+        
+        <!-- Content -->
+        <div class="content">
+            <h2 class="welcome-text">أهلا وسهلا بيك في العائلة ديالنا! 🎉</h2>
+            
+            <p style="font-size: 1.2rem; line-height: 1.8; color: #555;">السلام عليكم ومرحبا بيك!</p>
+            
+            <p style="line-height: 1.8; color: #555;">
+                فرحانين بزاف أنك انضميت لعائلة الشموع المغربية ديالنا. من دابا غادي توصلك كل جديد عندنا:
+            </p>
+            
+            <div class="benefits">
+                <h3 style="color: #B8860B; margin-bottom: 20px;">اش غادي توصلك معانا:</h3>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎁</div>
+                    <span><strong>عروض حصرية:</strong> تخفيضات وعروض خاصة غير للمشتركين ديالنا</span>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">🕯️</div>
+                    <span><strong>منتجات جديدة:</strong> أول واحد يعرف بالشموع الجديدة اللي كنطلقو</span>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">💡</div>
+                    <span><strong>نصائح وأفكار:</strong> كيفاش تستعمل الشموع باش تخلي دارك زوينة</span>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">📱</div>
+                    <span><strong>أخبار حصرية:</strong> قصص وراء صناعة كل شمعة</span>
+                </div>
+            </div>
+            
+            <p style="line-height: 1.8; color: #555;">
+                الشموع ديالنا مصنوعة بالحب والإتقان من مواد طبيعية 100%. كل شمعة عندها قصة وكتعكس الصنعة التقليدية المغربية.
+            </p>
+            
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="#" class="cta-button">شوف المجموعة ديالنا 🛍️</a>
+            </div>
+            
+            <div style="background: #FFF9E6; border-radius: 10px; padding: 20px; margin: 20px 0; border-right: 4px solid #B8860B;">
+                <p style="margin: 0; color: #B8860B; font-weight: bold;">💰 عرض خاص للمشتركين الجدد:</p>
+                <p style="margin: 10px 0 0 0; color: #555;">استعمل الكود <strong>WELCOME20</strong> واحصل على تخفيض 20% على أول طلبية ديالك!</p>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <h3>شموع مغربية</h3>
+            <p>صناعة يدوية مغربية أصيلة منذ 2020</p>
+            
+            <div class="social-links">
+                <a href="#">📘</a>
+                <a href="#">📷</a>
+                <a href="#">🎵</a>
+                <a href="#">📺</a>
+            </div>
+            
+            <p style="font-size: 0.9rem; opacity: 0.8;">
+                📧 ${email}<br>
+                📞 +212 600-000000<br>
+                📍 المغرب، الدار البيضاء
+            </p>
+            
+            <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 20px;">
+                ما بغيتيش توصلك الرسائل ديالنا؟ <a href="#" style="color: #B8860B;">إلغاء الاشتراك</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>`;
+        }
+        
+        // Scroll to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Show scroll to top button when scrolling
+        window.addEventListener('scroll', function() {
+            const scrollBtn = document.getElementById('scrollToTop');
+            if (scrollBtn) {
+                if (window.pageYOffset > 300) {
+                    scrollBtn.style.display = 'block';
+                } else {
+                    scrollBtn.style.display = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
